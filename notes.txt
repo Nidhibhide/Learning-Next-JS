@@ -1,0 +1,36 @@
+
+
+### 1. CSR (Client-Side Rendering)
+
+* Rendering happens in the browser using JavaScript.
+* **When to use:** Highly interactive apps (dashboards, SPAs).
+* **Client Side:** Handles both rendering and data fetching.
+* **Real-world use:** Admin dashboards, chat apps, where SEO is not critical.
+
+---
+
+### 2. SSR (Server-Side Rendering)
+
+* Default behavior: Rendering happens on the server for every request.
+* Server prepares full HTML (with data) and sends it to the browser.
+* **When to use:** SEO-focused pages (blogs, news, e-commerce product pages).
+* **Best for:** Content that changes on every request (e.g., logged-in user dashboards).
+
+---
+
+### 3. SSG (Static Site Generation)
+
+* Pages are generated at build time and served as static HTML.
+* No server computation needed at request time.
+* **Benefits:** Super fast, CDN-friendly.
+* **When to use:** Content that never/rarely changes (marketing sites, documentation, blogs).
+
+---
+
+### 4. ISR (Incremental Static Regeneration)
+
+* A hybrid of SSG and SSR.
+* Page is pre-rendered at build time like SSG.
+* Automatically refreshes in the background after a set interval (`revalidate`).
+* **When to use:** Content that doesn’t change often but still needs periodic updates (blogs, docs, marketing pages).
+

@@ -1,0 +1,70 @@
+nextjs-practice/
+│── app/
+│   ├── page.tsx                        # Homepage
+│
+│   # 1. Routing
+│   ├── routing/
+│   │   ├── page.tsx
+│   │   ├── dynamic/[id]/page.tsx       # Dynamic routes
+│   │   ├── catch-all/[...slug]/page.tsx# Catch-all routes
+│   │   ├── nested/page.tsx             # Nested routing
+│
+│   # 2. Rendering Strategies
+│   ├── rendering/
+│   │   ├── csr/page.tsx                # Client-side rendering
+│   │   ├── ssr/page.tsx                # Server-side rendering
+│   │   ├── ssg/page.tsx                # Static site generation
+│   │   ├── isr/page.tsx                # Incremental static regeneration
+│
+│   # 3. Core Features
+│   ├── features/
+│   │   ├── layout-demo/layout.tsx      # Layouts
+│   │   ├── api/route.ts                # API route
+│   │   ├── middleware-demo/page.tsx    # Middleware example
+│   │   ├── error-demo/error.tsx        # Custom error
+│   │   ├── image-optimization/page.tsx # next/image demo
+│   │   ├── fonts/page.tsx              # next/font demo
+│
+│   # 4. Data Fetching
+│   ├── data-fetching/
+│   │   ├── server/page.tsx             # Server Component demo
+│   │   ├── client/page.tsx             # Client Component demo
+│   │   ├── api-fetch/page.tsx          # Fetch from API
+│   │   ├── db-fetch/page.tsx           # Fetch from database
+│   │   ├── cache/page.tsx              # Caching & revalidation
+│
+│   # 5. Styling
+│   ├── styling/
+│   │   ├── css-modules/page.tsx
+│   │   ├── tailwind/page.tsx
+│   │   ├── styled-components/page.tsx
+│   │   ├── global-css/page.tsx
+│
+│   # 6. Advanced Topics
+│   ├── advanced/
+│   │   ├── auth/page.tsx               # Authentication (NextAuth/JWT)
+│   │   ├── file-upload/page.tsx        # File uploads
+│   │   ├── middleware-security/page.tsx# Middleware security
+│   │   ├── env-variables/page.tsx      # Using .env
+│   │   ├── integrations/
+│   │   │   ├── razorpay/page.tsx
+│   │   │   ├── google-maps/page.tsx
+│   │   │   ├── firebase/page.tsx
+│   │   │   └── stripe/page.tsx
+│
+│   # 7. Deployment & Testing
+│   ├── deployment/page.tsx             # Deployment notes (Vercel, Netlify)
+│   ├── testing/page.tsx                # Jest / RTL / Cypress demo
+│
+│── components/                         # Shared components (Navbar, Footer, Buttons, etc.)
+│── hooks/                              # Custom hooks (useAuth, useFetch, etc.)
+│── context/                            # Context API providers
+│── lib/                                # Utility functions, DB connections
+│── public/                             # Static assets (images, icons, etc.)
+│── styles/                             # Global styles, Tailwind config
+│
+│── .env.local                          # Environment variables
+│── next.config.js                      # Next.js config
+│── tailwind.config.js                  # Tailwind config (if using Tailwind)
+│── tsconfig.json                       # TypeScript config
+│── package.json
