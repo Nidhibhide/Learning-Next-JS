@@ -1,36 +1,44 @@
 
+## Next.js Basics
 
-### 1. CSR (Client-Side Rendering)
+1. Next.js is a React framework. It’s like an upgraded version of React, created by Vercel.
+2. SEO Friendly – It can show data to Google, which is good for ranking.
+
+
+
+### Client-Side Rendering (CSR)
 
 * Rendering happens in the browser using JavaScript.
-* **When to use:** Highly interactive apps (dashboards, SPAs).
-* **Client Side:** Handles both rendering and data fetching.
-* **Real-world use:** Admin dashboards, chat apps, where SEO is not critical.
+* When to use: Highly interactive apps such as dashboards and single-page applications.
+* Client side handles both rendering and data fetching.
+* Real-world use: Admin dashboards, chat apps, or applications where SEO is not critical.
 
----
 
-### 2. SSR (Server-Side Rendering)
+### Server-Side Rendering (SSR)
 
 * Default behavior: Rendering happens on the server for every request.
-* Server prepares full HTML (with data) and sends it to the browser.
-* **When to use:** SEO-focused pages (blogs, news, e-commerce product pages).
-* **Best for:** Content that changes on every request (e.g., logged-in user dashboards).
+* The server prepares full HTML (with data) and sends it to the browser.
+* When to use: SEO-focused pages such as blogs, news, or e-commerce product pages.
+* Best for: Content that changes on every request, for example, logged-in user dashboards.
 
----
 
-### 3. SSG (Static Site Generation)
+
+### Static Site Generation (SSG)
 
 * Pages are generated at build time and served as static HTML.
-* No server computation needed at request time.
-* **Benefits:** Super fast, CDN-friendly.
-* **When to use:** Content that never/rarely changes (marketing sites, documentation, blogs).
+* No server computation is needed at request time.
+* Benefits: Super fast and CDN-friendly.
+* When to use: Content that rarely changes, such as marketing sites, documentation, or blogs.
 
----
 
-### 4. ISR (Incremental Static Regeneration)
+
+### Incremental Static Regeneration (ISR)
 
 * A hybrid of SSG and SSR.
-* Page is pre-rendered at build time like SSG.
-* Automatically refreshes in the background after a set interval (`revalidate`).
-* **When to use:** Content that doesn’t change often but still needs periodic updates (blogs, docs, marketing pages).
+* Pages are pre-rendered at build time like SSG.
+* Pages automatically refresh in the background after a set interval (`revalidate`).
+* When to use: Content that doesn’t change often but still needs periodic updates, such as blogs, documentation, or marketing pages.
+
+
+
 
