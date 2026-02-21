@@ -39,6 +39,22 @@
 * Pages automatically refresh in the background after a set interval (`revalidate`).
 * When to use: Content that doesn’t change often but still needs periodic updates, such as blogs, documentation, or marketing pages.
 
+-Scripts of next js 
+1]next dev - start development server 
+2]next start - start production server 
+
+-File and folder structure 
+1]public - The folder contains static assests i.e images , etc
+2]If i create folder like 'about' in that i created 'about.jsx' file then it never display page after run '/about' It should be named as 'page.jsx' not even index.jsx 
+
+
+#create navigation bar using LINK tag 
+
+-Route Group 
+1]
+
+
+
 
 
 
