@@ -47,12 +47,34 @@
 1]public - The folder contains static assests i.e images , etc
 2]If i create folder like 'about' in that i created 'about.jsx' file then it never display page after run '/about' It should be named as 'page.jsx' not even index.jsx 
 
+-check about <metha name="viewport" content> check for responsiveness
 
-#create navigation bar using LINK tag 
+-i know about next js how we use meta tag but how we have used in react js 
+-what is use of authors tag in meta data 
+-add fav icon in app 
 
--Route Group 
-1]
+-Client and Server component 
+1]In React , we every component is Client component 
+2]In app folder , by default every component is React Server Component 
+3]In app , folder name should be in lowercase?
+4]solve example of RSC and RCC
+5]In RSC , " USE API KEYS,TOKENS AND OTHER SECRETS WITHOUT EXPOSING THEM TO CLIENT. i.e network tab from browser but in RCC we can see info easily.
+6]#IMP - " If RCC imports another component that imported one becomes a RCC too , even If it doesnt have "use client" (i.e RSC).
 
+-Dynamic Route Segments 
+1]params - we can get value pf dynamic routing URL 
+2]Example of dynamic routing and nesting routes
+3]We can use only Dynamic Routes Segments in Server Components.
+4]How to implement in RCC using useParams()
+
+1]searchParams - its like query paramter for filtering , sorting and pagination 
+2]Example of Filtering , sorting , pagination , search , dynamic deals in RSC 
+
+1]useSearchParams - It same working like searchParams used in RCC
+2]Use getAll() to get multiple values ,
+
+1]catch all segments in URL params [...slug] ( in RSC)
+2]Implementation in RCC using useParams()
 
 
 
