@@ -1,10 +1,12 @@
-const ServerComponent = async () => {
+const ServerComponent = async ({ searchParams }) => {
   let result = [];
   try {
-    const response = await fetch("https://fakestoreapi.com/products");
+    const params = await searchParams;
+    const response = await fetch(
+      `https://fakestoreapi.com/products/${params.id}`,
+    );
     result = await response.json();
     console.log(result);
-  
   } catch (e) {
     console.log(e);
   }
@@ -15,11 +17,28 @@ const ServerComponent = async () => {
         This is Server Component Example ( Category List ) :
       </h1>
       <ul className="px-4">
-        {result.map((value) => (
-          <li key={value.id} className="mt-2 text-xl font-bold">
-           {value?.id} - {value?.title}
-          </li>
-        ))}
+        {/* {result.map((value) => ( */}
+        <li className="mt-4 text-lg">
+          <p>
+            <strong>ID:</strong> {result?.id}
+          </p>
+          <p>
+            <strong>Title:</strong> {result?.title}
+          </p>
+          <p>
+            <strong>Description:</strong> {result?.description}
+          </p>
+          <p>
+            <strong>Category:</strong> {result?.category}
+          </p>
+          <p>
+            <strong>Image:</strong> {result?.image}
+          </p>
+          <p>
+            <strong>Rate:</strong> {result?.rating?.rate}
+          </p>
+        </li>
+        {/* ))} */}
       </ul>
     </>
   );

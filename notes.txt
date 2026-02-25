@@ -76,7 +76,21 @@
 1]catch all segments in URL params [...slug] ( in RSC)
 2]Implementation in RCC using useParams()
 
+-Data Fetching in RSC
+1]Use fetch api and pass data via search Query
+2]Add validation for no data passsed and empty string too
+API = https://api.genderize.io/?name=peter
+
+-Data Fetching in RCC
+1]Use fetch api and pass data via search Query
+2]Add validation for no data passsed and empty string too
+API = https://api.genderize.io/?name=peter
 
 
-
-
+E-commerce App
+//1]make filters responsive sidebar 
+//2]add search by title in search bar 
+//3]Display category 
+4]asc and desc for rating and price 
+5]add pagination
+6]increase font size from search filter 
