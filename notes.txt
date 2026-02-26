@@ -91,6 +91,8 @@ E-commerce App
 //1]make filters responsive sidebar 
 //2]add search by title in search bar 
 //3]Display category 
-4]asc and desc for rating and price 
+//4]asc and desc for rating and price 
 5]add pagination
-6]increase font size from search filter 
+//7]Fix API URL'S
+//8]multiple filter at once 
+//1]issue of responsivness

@@ -1,44 +1,34 @@
 "use client"
-import React from "react";
 
-const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  const pages = [...Array(totalPages).keys()].map((num) => num + 1);
+import { useRouter, useSearchParams } from "next/navigation";
+import { createParams } from "@/utils/ecommerce";
+
+const Pagination = ({ currentPage = 1, totalPages = 1 }) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const handlePageChange = (page) => {
+    if (page < 1 || page > totalPages) return;
+    const params = createParams(searchParams);
+    params.set("page", page.toString());
+    router.push(`?${params.toString()}`);
+  };
 
   return (
-    <div className="flex justify-center items-center gap-2 mt-8 mb-8">
-
-      {/* Previous */}
-      <button
-        onClick={() => onPageChange(currentPage - 1)}
-        disabled={currentPage === 1}
-        className="px-3 py-1 rounded-md border bg-gray-200 disabled:opacity-50 text-base font-medium"
-      >
-        Prev
+    <div className="flex justify-center items-center gap-2 sm:gap-3 mt-6 sm:mt-8 mb-6 sm:mb-8">
+      <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}
+        className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border bg-gray-200 disabled:opacity-50 text-sm font-medium">
+        ← Prev
       </button>
-
-      {/* Page Numbers */}
-      {pages.map((page) => (
-        <button
-          key={page}
-          onClick={() => onPageChange(page)}
-          className={`px-3 py-1 rounded-md border text-base
-            ${currentPage === page
-              ? "bg-blue-600 text-white"
-              : "bg-white hover:bg-gray-200"}`}
-        >
-          {page}
-        </button>
-      ))}
-
-      {/* Next */}
-      <button
-        onClick={() => onPageChange(currentPage + 1)}
-        disabled={currentPage === totalPages}
-        className="px-3 text-base font-medium py-1 rounded-md border bg-gray-200 disabled:opacity-50"
-      >
-        Next
+      
+      <span className="px-2 sm:px-3 py-1 text-sm text-gray-600">
+        {currentPage} / {totalPages}
+      </span>
+      
+      <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}
+        className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-md border bg-gray-200 disabled:opacity-50 text-sm font-medium">
+        Next →
       </button>
-
     </div>
   );
 };

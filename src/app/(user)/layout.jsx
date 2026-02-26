@@ -15,6 +15,9 @@ export default function UserRootLayout({ children }) {
          <li>
           <Link href="/demo">Demo </Link>
         </li>
+        <li>
+          <Link href="/project/products">Project</Link>
+        </li>
       </ul>
       {children}
     </>

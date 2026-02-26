@@ -1,14 +1,19 @@
 "use client"
 
+import Link from "next/link"
+import { useSearchParams } from "next/navigation";
+
+
+
 
 const CardLayout = ({ products }) => {
-  console.log(products)
+  const searchParams = useSearchParams();
   if (!products || products.length === 0) {
     return <div className="text-center py-10 text-gray-500">No products found</div>;
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 px-4 sm:px-6 lg:px-8 py-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-6 lg:gap-8 px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6">
       {products.map((product) => (
         <div
           key={product.id}
@@ -26,7 +31,14 @@ const CardLayout = ({ products }) => {
           {/* Product Details */}
           <div className="p-3 sm:p-4 flex flex-col flex-grow">
             {/* Brand */}
-            <p className="text-xs sm:text-sm text-gray-500 mb-1">{product.brand}</p>
+            <div className="flex items-center gap-2 mb-1 flex-wrap">
+              <p className="text-xs sm:text-sm text-gray-500">{product.brand}</p>
+              {product.category && (
+                <span className="text-xs sm:text-sm text-purple-600 bg-purple-50 px-1.5 sm:px-2 py-0.5 rounded">
+                  {product.category}
+                </span>
+              )}
+            </div>
 
             {/* Title */}
             <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-800 mb-2 line-clamp-2 h-10 sm:h-11 md:h-12">
@@ -65,9 +77,12 @@ const CardLayout = ({ products }) => {
             </div>
 
             {/* View Details Button */}
-            <button className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-3 sm:px-4 rounded-lg transition-colors text-sm sm:text-base mt-auto">
+            <Link
+                href={`/project/products/${product.id}?${searchParams.toString()}`}
+              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-medium py-2 px-3 sm:px-4 rounded-lg transition-colors text-sm sm:text-base mt-auto text-center block"
+            >
               View Details
-            </button>
+            </Link>
           </div>
         </div>
       ))}
