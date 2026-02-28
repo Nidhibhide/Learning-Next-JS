@@ -54,12 +54,23 @@
 -add fav icon in app 
 
 -Client and Server component 
-1]In React , we every component is Client component 
-2]In app folder , by default every component is React Server Component 
-3]In app , folder name should be in lowercase?
-4]solve example of RSC and RCC
-5]In RSC , " USE API KEYS,TOKENS AND OTHER SECRETS WITHOUT EXPOSING THEM TO CLIENT. i.e network tab from browser but in RCC we can see info easily.
-6]#IMP - " If RCC imports another component that imported one becomes a RCC too , even If it doesnt have "use client" (i.e RSC).
+    A.Client Comp - 
+        1.In React , we every component is Client component 
+        2.If RCC imports another component that imported one becomes a RCC too , even If it doesnt have "use client" (i.e RSC)
+        3.Client Comp executes on the server as well as on the client i.e Browser
+
+    B.Server Comp - 
+        1.In Next.Js , by default every component is React Server Component 
+        2.In RSC , " USE API KEYS,TOKENS AND OTHER SECRETS WITHOUT EXPOSING THEM TO CLIENT. i.e network tab from browser but in RCC we can see info easily.
+        3.Server comp execute only on the server . why ? ? ?
+
+
+
+
+
+
+
+
 
 -Dynamic Route Segments 
 1]params - we can get value pf dynamic routing URL 
@@ -86,13 +97,75 @@ API = https://api.genderize.io/?name=peter
 2]Add validation for no data passsed and empty string too
 API = https://api.genderize.io/?name=peter
 
+Examples 
+1]useRouter() with methods 
+2]redirect()
+3]Static and dynamic rendering in Production & devlopment mode .
+4]Hyderation Error in development & Production mode 
+5]Caching (`no-store`, `revalidate`)
 
-E-commerce App
-//1]make filters responsive sidebar 
-//2]add search by title in search bar 
-//3]Display category 
-//4]asc and desc for rating and price 
-5]add pagination
-//7]Fix API URL'S
-//8]multiple filter at once 
-//1]issue of responsivness
+
+
+-useRouter() Hook in RCC
+1]wE can get it from 2 ways i.e next/router , next/navigation 
+2]The useRouter() hook allows you to programmatically change routes inside RCC.
+3]Methods : 
+    1.router.push() - Perform a client side navigation to provided route.
+    2.router.replace() - Perform client side navigation to provided without adding new route.
+    3.router.refresh() - refresh current route .
+4]Use next/router if you are using Page Router , otherwise next/navigation if you are using App Router.
+
+-redirect() in RSC
+1]Working like useRouter() and use redirect from next/navigation 
+2]But redirect should be called outside from try block coz redirect must throw error if it outside try block it will handle by next.js
+If we have to use in try block then , catch and throw that error manually 
+
+
+-Static Rendering
+1]runs once at build time 
+2]Database call , Normal fetch comes under static rendering 
+3]If page does NOT depend on request-specific data , It becomes Static.
+
+-Dynamic Rendering
+1]SearchParams , headers() , cookies() , useSearchParams() , fetch with cache:'no-store ,
+when u manually mark a page as dynamic i.e export const dynamic ='force-dynamic' includes in dynamic pages .
+2]If page depends on: User input , URL query , Headers , Cookies It becomes Dynamic.
+
+- Production mode (npm run build & npm start ) vs development mode (npm run dev)
+1]Changes after npm run build not affected for that we need to again run npm run build ( staic & dynamic pages both)
+
+-Hydration
+1]Steps = Server sends HTML -> Browser displays it -> React loads JS -> React connects events -> Button works 
+2]Making the server-rendered HTML interactive in the browser.
+3]If value changes between: Server render & Browser render Hydration error will happen.
+
+
+//1. App Router (`app/` folder structure)
+//2. Pages (`page.js`)
+//3. Layouts (`layout.js`)
+//4. Routing & Nested Routing
+//5. Dynamic Routes (`[id]`)
+//6. Route Groups
+//7. `Link` Component
+//8. `useRouter()`
+//9. `useSearchParams()`
+//10. Server Components
+//11. Client Components (`"use client"`)
+//12. Data Fetching (`fetch`)
+13. Caching (`no-store`, `revalidate`) ***
+14. Static Rendering
+15. Dynamic Rendering
+16. ISR (Incremental Static Regeneration) , SSG , SSR 
+17. Loading UI (`loading.js`)
+18. Error Handling (`error.js`)
+19. Not Found Handling (`not-found.js`)
+20. API Routes / Route Handlers (`app/api`)
+21. HTTP Methods (GET, POST, PUT, DELETE)
+22. Middleware
+23. Authentication Basics (JWT, Cookies)
+24. Environment Variables (`.env.local`)
+25. Deployment (Vercel)
+26. Image Optimization (`next/image`)
+27. Metadata API (SEO)
+28.Use MYSQL DB Connection 
+
